@@ -1,0 +1,12 @@
+env = "prod"
+encryption = false
+
+
+[http]
+port = "8188"
+
+[wx]
+corpid = ""
+
+
+
