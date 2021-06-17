@@ -12,20 +12,21 @@ func InitWxAPP(corpID string) {
 
 	client := workwx.New(corpID)
 
-	//测试环境
-	testInfo := WxEnv[WXENV_TEST]
-	TestWarnWx = client.WithApp(testInfo.CorpSecret, testInfo.AgentId)
-	if TestWarnWx == nil {
-		log.Fatalf("ProdLargeAmountWX info error")
+	if Cfg.Env != "prod" {
+		//测试环境
+		testInfo := WxEnv[WXENV_TEST]
+		TestWarnWx = client.WithApp(testInfo.CorpSecret, testInfo.AgentId)
+		if TestWarnWx == nil {
+			log.Fatalf("ProdLargeAmountWX info error")
+		}
+		TestWarnWx.SpawnAccessTokenRefresher()
+	} else {
+		//生产大金额告警
+		prodLargeAmountInfo := WxEnv[WXENV_PROD_AMOUNT]
+		ProdLargeAmountWX = client.WithApp(prodLargeAmountInfo.CorpSecret, prodLargeAmountInfo.AgentId)
+		if ProdLargeAmountWX == nil {
+			log.Fatalf("ProdLargeAmountWX info error")
+		}
+		ProdLargeAmountWX.SpawnAccessTokenRefresher()
 	}
-	TestWarnWx.SpawnAccessTokenRefresher()
-
-	//生产大金额告警
-	prodLargeAmountInfo := WxEnv[WXENV_PROD_AMOUNT]
-	ProdLargeAmountWX = client.WithApp(prodLargeAmountInfo.CorpSecret, prodLargeAmountInfo.AgentId)
-	if ProdLargeAmountWX == nil {
-		log.Fatalf("ProdLargeAmountWX info error")
-	}
-	ProdLargeAmountWX.SpawnAccessTokenRefresher()
-
 }

@@ -1,12 +1,8 @@
-env = "prod"
+env = "test"
 encryption = false
-
 
 [http]
 port = "8188"
 
 [wx]
-corpid = ""
-
-
-
+corpid = "ww740f6829c8d8d220"

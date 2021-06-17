@@ -23,10 +23,19 @@ func init() {
 	WxEnv = make(map[string]*EnvInfo)
 
 	//测试环境交易告警
+	//WxEnv[WXENV_TEST] = &EnvInfo{
+	//	ToParty:    []string{"82"},
+	//	AgentId:    1000004,
+	//	CorpSecret: "IGv_VTjdWTAlmgpGti0Z3spSb2zficU0a7ykoMmfM7U",
+	//}
+
+	//xXumGCGXNBuZxH-M1J61SyLYw9o-yCB5GBjStrNaWRg
+	//1000014
+
 	WxEnv[WXENV_TEST] = &EnvInfo{
-		ToParty:    []string{"3"},
-		AgentId:    1000004,
-		CorpSecret: "IGv_VTjdWTAlmgpGti0Z3spSb2zficU0a7ykoMmfM7U",
+		ToParty:    []string{"83"},
+		AgentId:    1000016,
+		CorpSecret: "BF5P3g0biTS_5qAKt5tGA4qz39EBK8gqWiLkQqF6ZXQ",
 	}
 	//生成大金额告警
 	//Env["prod_large_amount"] = &EnvInfo{
@@ -35,17 +44,29 @@ func init() {
 	//	CorpSecret:"Hwrsx2cS-lDcEJOymw9P_8zzKdjH8SSpZ0DZ8SxkPoE"
 	//}
 
+	//WxEnv[WXENV_PROD_AMOUNT] = &EnvInfo{
+	//	ToParty:    []string{"4"},
+	//	AgentId:    1000008,
+	//	CorpSecret: "aGTno289e_LxbvST2OzVKOAQn3cBg-V7muISV3jF_S8",
+	//}
+
+	//WxEnv[WXENV_PROD_AMOUNT] = &EnvInfo{
+	//	ToParty:    []string{"83"},
+	//	AgentId:    1000016,
+	//	CorpSecret: "BF5P3g0biTS_5qAKt5tGA4qz39EBK8gqWiLkQqF6ZXQ",
+	//}
+
 	WxEnv[WXENV_PROD_AMOUNT] = &EnvInfo{
-		ToParty:    []string{"3"},
-		AgentId:    1000008,
-		CorpSecret: "aGTno289e_LxbvST2OzVKOAQn3cBg-V7muISV3jF_S8",
+		ToParty:    []string{"82"},
+		AgentId:    1000014,
+		CorpSecret: "xXumGCGXNBuZxH-M1J61SyLYw9o-yCB5GBjStrNaWRg",
 	}
 
 	//生产环境交易告警
 	WxEnv[WXENV_PROD_WARN] = &EnvInfo{
-		ToParty:    []string{"5"},
-		AgentId:    1000003,
-		CorpSecret: "JxvhjYej9gnvg7G8bYNmQGXYsqndhQXiEb4EV0xH6CE",
+		ToParty:    []string{"82"},
+		AgentId:    1000014,
+		CorpSecret: "xXumGCGXNBuZxH-M1J61SyLYw9o-yCB5GBjStrNaWRg",
 	}
 
 }

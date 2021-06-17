@@ -14,6 +14,7 @@ import (
 	"time"
 )
 
+//CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-s -w"
 func main() {
 
 	global.InitConfig("")
